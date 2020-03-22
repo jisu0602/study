@@ -1,4 +1,5 @@
 #ch4-1
+
 '''
 리스트: 자료(요소, element)를 저장할 수 있는 자료
 인덱스(index)로 요소 호출 가능
@@ -101,4 +102,86 @@ for number2 in numbers2:
     output[(number2 + 2) % 3].append(number2)
     print(output)
 print(output)
+print()
+
+'''
+딕셔너리 선언하기
+변수 = {
+    키: 값,
+    키: 값,
+    ...
+    키: 값
+}
+문자열로 키를 사용할 때는 반드시 따옴표를 붙여야 NameError가 발생하지 않음
+딕셔너리에 존재하지 않는 키에 접근하면 KeyError가 발생함
+'''
+dictionary = {
+    "name": "망고망고",
+    "type": "당절임",
+    "ingredient": ["망고", "설탕", "메타중아황산나트륨", "치자황색소"],
+    "origin": "필리핀"
+}
+
+print(dictionary)
+dictionary["price"] = 5000  #값 추가하기, 키가 기존에 있는 키라면 값이 대체됨
+print(dictionary)
+del dictionary["ingredient"]#값 제거하기
+print(dictionary)
+print()
+
+#딕셔너리 내부에 키가 있는지 확인하기: in, get()
+key = input("> 접근하고자 하는 키: ")
+
+if key in dictionary:
+    print(dictionary[key])
+else:
+    print("존재하지 않는 키에 접근함")
+print()
+
+#존재하지 않는 키에 일부러 접근해보기
+value = dictionary.get("아무거나")
+print("값:", value)
+
+if value == None:   #None 확인 방법
+    print("존재하지 않는 키에 접근함")
+print()
+
+#for 반복문 사용하기
+for key in dictionary:
+    print(key, ":", dictionary[key])
+print()
+
+#확인문제 3.
+numbers = [1,2,6,8,2,5,4,2,1,4,6,7,4,5,7,3,2,8,0,9]
+counter= {}
+
+for number in numbers:
+    if number in counter:
+        counter[number] = counter[number]+1
+    else:
+        counter[number] = 1
+
+print(counter)
+print()
+
+#확인문제 4.
+character = {
+    "name": "기사",
+    "level": "12",
+    "items": {
+        "sword": "불꽃의 검",
+        "armor": "풀플레이트"
+        },
+    "skill": ["베기", "세게 베기", "아주 세게 베기"]
+    }
+
+for key in character:
+    if type(character[key]) is dict:
+        for small_key in character[key]:
+            print(key, ":", character[key][small_key])
+    elif type(character[key]) is list:
+        for item in character[key]:
+            print(key, ":", item)
+    else:
+        print(key, ":", character[key])
 print()
