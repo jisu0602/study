@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>나이 계산하기</title>
+	<link rel="stylesheet" href="css/age.css">
+</head>
+<body>	
+	<!--<button class="btn" onclick="calc()">나이 계산하기</button>
+	<div id="result" class="show">(결과 값 표시)</div> -->
+	<script>
+		var birth = prompt("언제 태어났슈...");
+		var year = new Date().getFullYear(); //현재 연도 가져오기
+		var age;
+		age = year - birth + 1;
+		alert(year + "년 현재 나이는 " + age + "살입니다...")
+	</script>
+</body>
+</html>
