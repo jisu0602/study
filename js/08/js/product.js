@@ -7,3 +7,9 @@
 				bigPic.setAttribute("src", newPic);
 			});
 		}
+
+		var view = document.querySelector("#view");
+
+		view.addEventListener("click", function() {
+			document.querySelector("#detail").style.display = "block";
+		});
